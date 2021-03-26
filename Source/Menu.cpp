@@ -31,7 +31,7 @@ void MenuSelection()
 		{
 		case 1:
 			ArrayGenerator();
-			system("cls");
+			system("clear");
 
 			cout << "Generated Array:" << '\n';
 			PrintData();
@@ -46,7 +46,7 @@ void MenuSelection()
 
 		case 2:
 			ArrayGenerator();
-			system("cls");
+			system("clear");
 
 			cout << "Generated Array:" << '\n';
 			PrintData();
