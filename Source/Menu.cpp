@@ -12,7 +12,7 @@ void ShowMenu()
 	cout << "Selection menu" << endl;
 	cout << "1.Selection Sort" << endl;
 	cout << "2.Buuble Sort" << endl;
-	cout << "3.-" << endl;
+	cout << "3.Insertion Sort" << endl;
 	cout << "4.-" << endl;
 	cout << "5. Exit" << endl;
 	cout << "=============================" << endl;
@@ -58,12 +58,21 @@ void MenuSelection()
 			cout << "\n";
 			break;
 
-		/*case 3:
-			cout << "Third";
+		case 3:
+			ArrayGenerator();
+			system("cls");
+
+			cout << "Generated Array:" << '\n';
+			PrintData();
+			InsertionSort();
+
+			cout << '\n' << "Insertion Sort:" << '\n';
+			PrintData();
+
 			cout << "\n";
 			break;
 
-		case 4:
+		/*case 4:
 			cout << "Fourth";
 			cout << "\n";
 			break;*/
