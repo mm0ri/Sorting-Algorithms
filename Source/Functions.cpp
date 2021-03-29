@@ -71,7 +71,5 @@ void InsertionSort()
 			Arr[i + 1] = k;
 		}
 	}
-}
-
-void 
+} 
 
