@@ -59,7 +59,7 @@ void BubbleSort()
 
 void InsertionSort()
 {
-	int k = 0, i = 0;
+	int k, i = 0;
 	for (int j = 1; j < Size; j++)
 	{
 		k = Arr[j];
@@ -71,5 +71,39 @@ void InsertionSort()
 			Arr[i + 1] = k;
 		}
 	}
-} 
+}
+
+void QuickSort(int Begin, int End)
+{
+	int Left = Begin, Right = End;
+	int pivot = Arr[(Left + Right) / 2];
+
+	while (Left <= Right)
+	{
+		while (Arr[Left] < pivot)
+		{
+			Left++;
+		}
+
+		while (Arr[Right] > pivot)
+		{
+			Right--;
+		}
+
+		if (Left <= Right)
+		{
+			swap(Arr[Left++], Arr[Right--]);
+		}
+	}
+
+	if (Begin < Right) 
+	{
+		QuickSort(Begin, Right);
+	}
+
+	if (End > Left)
+	{
+		QuickSort(Left, End);
+	}
+}
 
