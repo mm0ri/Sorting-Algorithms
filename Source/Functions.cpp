@@ -50,42 +50,60 @@ void BubbleSort()
 				buff = Arr[j - 1];
 				Arr[j - 1] = Arr[j];
 				Arr[j] = buff;
-				/*PrintData();
-				cout <<'\n' << '\n';*/
+				//PrintData();
+				//cout <<'\n' << '\n';
 			}
 		}
 	}
 }
 
-//void SwapElement(int* Arr, int i)
-//{
-//	buff = Arr[i];
-//	Arr[i] = Arr[i - 1];
-//	Arr[i - 1] = buff;
-//}
+void InsertionSort()
+{
+	int k, i = 0;
+	for (int j = 1; j < Size; j++)
+	{
+		k = Arr[j];
+		i = j - 1;
+		while (i >= 0 && Arr[i]>k)
+		{
+			Arr[i + 1] = Arr[i];
+			i = i - 1;
+			Arr[i + 1] = k;
+		}
+	}
+}
 
-//void ShakerSort() // Unlimited Cycle idk why
-//{
-//	int LeftBorder = 1;
-//	int RightBorder = Size - 1;
-//	while(LeftBorder <= RightBorder)
-//	{
-//		for (int i = RightBorder; i >= LeftBorder; i--)
-//		{
-//			if (Arr[i - 1] > Arr[i])
-//			{
-//				SwapElement(Arr, i);
-//			}
-//			RightBorder++;
-//		}
-//
-//		for (int i = LeftBorder; i <= RightBorder; i++)
-//		{
-//			if (Arr[i - 1] > Arr[i])
-//			{
-//				SwapElement(Arr, i);
-//			}
-//			RightBorder--;
-//		}
-//	}
-//}
+void QuickSort(int Begin, int End)
+{
+	int Left = Begin, Right = End;
+	int pivot = Arr[(Left + Right) / 2];
+
+	while (Left <= Right)
+	{
+		while (Arr[Left] < pivot)
+		{
+			Left++;
+		}
+
+		while (Arr[Right] > pivot)
+		{
+			Right--;
+		}
+
+		if (Left <= Right)
+		{
+			swap(Arr[Left++], Arr[Right--]);
+		}
+	}
+
+	if (Begin < Right) 
+	{
+		QuickSort(Begin, Right);
+	}
+
+	if (End > Left)
+	{
+		QuickSort(Left, End);
+	}
+}
+

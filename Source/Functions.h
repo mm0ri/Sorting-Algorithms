@@ -2,9 +2,11 @@
 
 void PrintData();
 void ArrayGenerator();
+
 void SelectionSort();
 void BubbleSort();
-//void ShakerSort();
+void InsertionSort();
+void QuickSort(int Begin, int End);
 
 void ShowMenu();
 void MenuSelection();
